@@ -1,0 +1,43 @@
+{
+  "name": "cpf-validator",
+  "displayName": "CPF Validator",
+  "description": "Highlights valid and invalid CPF numbers in text and Markdown files",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onLanguage:plaintext",
+    "onLanguage:markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "CPF Validator",
+      "properties": {
+        "cpfValidator.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable CPF validation highlighting"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "cpfValidator.toggle",
+        "title": "CPF Validator: Toggle Highlighting"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
